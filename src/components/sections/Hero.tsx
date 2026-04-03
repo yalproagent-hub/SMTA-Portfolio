@@ -24,7 +24,7 @@ export const Hero = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+      transition: { duration: 0.6, ease: "easeOut" },
     },
   };
 
@@ -33,25 +33,22 @@ export const Hero = () => {
       id="top"
       className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-background"
     >
-      {/* Background Circles */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.04]">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-primary/50" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1200px] h-[1200px] rounded-full border border-primary/50" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1600px] h-[1600px] rounded-full border border-primary/50" />
       </div>
 
-      {/* KEY FIX: wider container, left-biased columns */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-10 lg:px-16">
         <div
           className="grid grid-cols-1 items-center gap-8"
           style={{ gridTemplateColumns: "1fr auto" }}
         >
-          {/* ── LEFT: Text ── */}
           <div className="flex flex-col items-start text-left pr-4 lg:pr-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <Badge variant="primary" icon="mdi:robot-outline" className="mb-6">
                 AI Automation Specialist
@@ -95,10 +92,9 @@ export const Hero = () => {
               style={{ maxWidth: "560px" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
             >
               I build AI systems that replace manual work, capture leads automatically, and run your entire business operations without you lifting a finger.
-
             </motion.p>
 
             <motion.p
@@ -106,10 +102,9 @@ export const Hero = () => {
               style={{ maxWidth: "560px" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
             >
               From WhatsApp AI agents to full automation workflows, everything is designed to save time, reduce cost, and scale faster.
-
             </motion.p>
 
             <motion.div
@@ -129,7 +124,6 @@ export const Hero = () => {
               </a>
             </motion.div>
 
-            {/* Skill Pills */}
             <motion.div
               className="flex flex-row flex-wrap gap-3"
               initial={{ opacity: 0, y: 20 }}
@@ -152,16 +146,14 @@ export const Hero = () => {
             </motion.div>
           </div>
 
-          {/* ── RIGHT: Photo ── */}
           <div className="hidden lg:flex justify-center items-center">
             <motion.div
               className="relative"
               style={{ width: "360px", height: "360px" }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
             >
-              {/* Rotating gradient ring */}
               <div
                 className="absolute inset-0 rounded-full p-[3px]"
                 style={{
@@ -173,7 +165,6 @@ export const Hero = () => {
                 <div className="w-full h-full rounded-full bg-white" />
               </div>
 
-              {/* Photo */}
               <div className="absolute inset-2 overflow-hidden rounded-full border-[6px] border-white bg-gray-100 shadow-2xl z-10">
                 <Image
                   src="/images/profile.jpg"
@@ -185,9 +176,7 @@ export const Hero = () => {
                 />
               </div>
 
-              {/* Floating badges */}
               <div className="absolute inset-0 z-20 pointer-events-none">
-                {/* n8n — top left */}
                 <motion.div
                   animate={{ y: [-8, 8, -8] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -198,7 +187,6 @@ export const Hero = () => {
                   <span className="text-xs font-semibold text-[#374151]">n8n</span>
                 </motion.div>
 
-                {/* GHL — right */}
                 <motion.div
                   animate={{ y: [8, -8, 8] }}
                   transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -209,7 +197,6 @@ export const Hero = () => {
                   <span className="text-xs font-semibold text-[#374151]">GHL</span>
                 </motion.div>
 
-                {/* WhatsApp AI — bottom left */}
                 <motion.div
                   animate={{ y: [-6, 6, -6] }}
                   transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
@@ -220,7 +207,6 @@ export const Hero = () => {
                   <span className="text-xs font-semibold text-[#374151]">WhatsApp AI</span>
                 </motion.div>
 
-                {/* AI Voice — bottom right */}
                 <motion.div
                   animate={{ y: [6, -6, 6] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
