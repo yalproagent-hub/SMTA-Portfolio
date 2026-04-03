@@ -281,13 +281,11 @@ const WorkflowCarousel: React.FC<CarouselProps> = ({
 // Main Showcase Component
 // ─────────────────────────────────────────────
 export const Showcase = () => {
-  const [filter, setFilter] = useState("All");
+  
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const filteredProjects = PROJECTS;
 
-  const filteredProjects =
-    filter === "All"
-      ? PROJECTS
-      : PROJECTS.filter((p) => p.category === filter);
+
 
   return (
     <section id="projects" className="py-24 bg-white relative">
@@ -299,22 +297,7 @@ export const Showcase = () => {
           subtitle="Every workflow below was built for a live client or real use case."
         />
 
-        {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {["All", ...CATEGORIES].map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
-                filter === cat
-                  ? "bg-primary text-white border-primary shadow-md"
-                  : "bg-white text-text-secondary border-border hover:border-primary/30 hover:text-primary"
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+      
 
         {/* Project Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
