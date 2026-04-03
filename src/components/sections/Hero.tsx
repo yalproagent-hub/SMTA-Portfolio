@@ -22,12 +22,9 @@ export const Hero = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1600px] h-[1600px] rounded-full border border-primary/50" />
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-10 lg:px-16">
-        <div
-          className="grid grid-cols-1 items-center gap-8"
-          style={{ gridTemplateColumns: "1fr auto" }}
-        >
-          <div className="flex flex-col items-start text-left pr-4 lg:pr-12">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center gap-12 lg:gap-8 mt-10 lg:mt-0">
+          <div className="flex flex-col items-start text-left w-full lg:pr-12">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -133,10 +130,9 @@ export const Hero = () => {
             </motion.div>
           </div>
 
-          <div className="hidden lg:flex justify-center items-center">
+          <div className="flex justify-center items-center w-full mt-4 lg:mt-0">
             <motion.div
-              className="relative"
-              style={{ width: "360px", height: "360px" }}
+              className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px]"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
@@ -167,8 +163,7 @@ export const Hero = () => {
                 <motion.div
                   animate={{ y: [-8, 8, -8] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute bg-white border border-[#E5E7EB] rounded-full px-3.5 py-2 flex items-center gap-1.5 shadow-md"
-                  style={{ top: "28px", left: "-48px" }}
+                  className="absolute bg-white border border-[#E5E7EB] rounded-full px-2.5 py-1.5 lg:px-3.5 lg:py-2 flex items-center gap-1.5 shadow-md -left-4 lg:-left-12 top-6 lg:top-7"
                 >
                   <Icon icon="simple-icons:n8n" className="text-[#EA4B71] w-4 h-4" />
                   <span className="text-xs font-semibold text-[#374151]">n8n</span>
@@ -177,8 +172,7 @@ export const Hero = () => {
                 <motion.div
                   animate={{ y: [8, -8, 8] }}
                   transition={{ duration: 5, repeat: Infinity }}
-                  className="absolute bg-white border border-[#E5E7EB] rounded-full px-3.5 py-2 flex items-center gap-1.5 shadow-md"
-                  style={{ top: "80px", right: "-40px" }}
+                  className="absolute bg-white border border-[#E5E7EB] rounded-full px-2.5 py-1.5 lg:px-3.5 lg:py-2 flex items-center gap-1.5 shadow-md -right-4 lg:-right-10 top-1/4"
                 >
                   <Icon icon="mdi:lightning-bolt" className="text-[#F97316] w-4 h-4" />
                   <span className="text-xs font-semibold text-[#374151]">GHL</span>
@@ -187,8 +181,7 @@ export const Hero = () => {
                 <motion.div
                   animate={{ y: [-6, 6, -6] }}
                   transition={{ duration: 4.5, repeat: Infinity }}
-                  className="absolute bg-white border border-[#E5E7EB] rounded-full px-3.5 py-2 flex items-center gap-1.5 shadow-md"
-                  style={{ bottom: "60px", left: "-16px" }}
+                  className="absolute bg-white border border-[#E5E7EB] rounded-full px-2.5 py-1.5 lg:px-3.5 lg:py-2 flex items-center gap-1.5 shadow-md -left-2 lg:-left-4 bottom-12 lg:bottom-16"
                 >
                   <Icon icon="mdi:whatsapp" className="text-[#22C55E] w-4 h-4" />
                   <span className="text-xs font-semibold text-[#374151]">WhatsApp AI</span>
@@ -197,8 +190,7 @@ export const Hero = () => {
                 <motion.div
                   animate={{ y: [6, -6, 6] }}
                   transition={{ duration: 3.5, repeat: Infinity }}
-                  className="absolute bg-white border border-[#E5E7EB] rounded-full px-3.5 py-2 flex items-center gap-1.5 shadow-md"
-                  style={{ bottom: "20px", right: "16px" }}
+                  className="absolute bg-white border border-[#E5E7EB] rounded-full px-2.5 py-1.5 lg:px-3.5 lg:py-2 flex items-center gap-1.5 shadow-md -right-2 lg:right-4 bottom-4 lg:bottom-6"
                 >
                   <Icon icon="mdi:microphone-outline" className="text-[#7C3AED] w-4 h-4" />
                   <span className="text-xs font-semibold text-[#374151]">AI Voice</span>
