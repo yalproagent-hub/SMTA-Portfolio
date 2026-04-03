@@ -11,23 +11,6 @@ const sentence1 = ["Mohamed"];
 const sentence2 = ["Thameem", "Ansari"];
 
 export const Hero = () => {
-  const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1, delayChildren: 0.3 },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" },
-  },
-};
-
   return (
     <section
       id="top"
@@ -48,7 +31,7 @@ const itemVariants: Variants = {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
+              transition={{ duration: 0.6 }}
             >
               <Badge variant="primary" icon="mdi:robot-outline" className="mb-6">
                 AI Automation Specialist
@@ -57,15 +40,16 @@ const itemVariants: Variants = {
 
             <motion.h1
               className="font-sora font-extrabold leading-[1.1] mb-6"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
             >
               <div className="block">
                 {sentence1.map((word, i) => (
                   <motion.span
                     key={`s1-${i}`}
-                    variants={itemVariants}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
                     className="inline-block mr-3"
                     style={{ color: "#2D1B8E" }}
                   >
@@ -73,11 +57,14 @@ const itemVariants: Variants = {
                   </motion.span>
                 ))}
               </div>
+
               <div className="block">
                 {sentence2.map((word, i) => (
                   <motion.span
                     key={`s2-${i}`}
-                    variants={itemVariants}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 + i * 0.1 }}
                     className="inline-block mr-3"
                     style={{ color: "#7C3AED" }}
                   >
@@ -92,7 +79,7 @@ const itemVariants: Variants = {
               style={{ maxWidth: "560px" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
+              transition={{ delay: 0.9, duration: 0.6 }}
             >
               I build AI systems that replace manual work, capture leads automatically, and run your entire business operations without you lifting a finger.
             </motion.p>
@@ -102,7 +89,7 @@ const itemVariants: Variants = {
               style={{ maxWidth: "560px" }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.9, duration: 0.6, ease: "easeOut" }}
+              transition={{ delay: 1.1, duration: 0.6 }}
             >
               From WhatsApp AI agents to full automation workflows, everything is designed to save time, reduce cost, and scale faster.
             </motion.p>
@@ -111,7 +98,7 @@ const itemVariants: Variants = {
               className="mb-10"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1, duration: 0.6 }}
+              transition={{ delay: 1.3, duration: 0.6 }}
             >
               <a
                 href="https://www.linkedin.com/in/mohamed-thameem-ansari-22b336247/"
@@ -128,7 +115,7 @@ const itemVariants: Variants = {
               className="flex flex-row flex-wrap gap-3"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.3, duration: 0.6 }}
+              transition={{ delay: 1.5, duration: 0.6 }}
             >
               {[
                 { icon: "simple-icons:n8n", label: "n8n Workflow Automation" },
@@ -152,7 +139,7 @@ const itemVariants: Variants = {
               style={{ width: "360px", height: "360px" }}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
               <div
                 className="absolute inset-0 rounded-full p-[3px]"
@@ -179,7 +166,7 @@ const itemVariants: Variants = {
               <div className="absolute inset-0 z-20 pointer-events-none">
                 <motion.div
                   animate={{ y: [-8, 8, -8] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 4, repeat: Infinity }}
                   className="absolute bg-white border border-[#E5E7EB] rounded-full px-3.5 py-2 flex items-center gap-1.5 shadow-md"
                   style={{ top: "28px", left: "-48px" }}
                 >
@@ -189,7 +176,7 @@ const itemVariants: Variants = {
 
                 <motion.div
                   animate={{ y: [8, -8, 8] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 5, repeat: Infinity }}
                   className="absolute bg-white border border-[#E5E7EB] rounded-full px-3.5 py-2 flex items-center gap-1.5 shadow-md"
                   style={{ top: "80px", right: "-40px" }}
                 >
@@ -199,7 +186,7 @@ const itemVariants: Variants = {
 
                 <motion.div
                   animate={{ y: [-6, 6, -6] }}
-                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 4.5, repeat: Infinity }}
                   className="absolute bg-white border border-[#E5E7EB] rounded-full px-3.5 py-2 flex items-center gap-1.5 shadow-md"
                   style={{ bottom: "60px", left: "-16px" }}
                 >
@@ -209,7 +196,7 @@ const itemVariants: Variants = {
 
                 <motion.div
                   animate={{ y: [6, -6, 6] }}
-                  transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                  transition={{ duration: 3.5, repeat: Infinity }}
                   className="absolute bg-white border border-[#E5E7EB] rounded-full px-3.5 py-2 flex items-center gap-1.5 shadow-md"
                   style={{ bottom: "20px", right: "16px" }}
                 >
